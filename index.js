@@ -1,3 +1,7 @@
+function setup() {
+  createCanvas(400, 400);
+}
+
 /**
 Progress Log:
 Finished three textures
@@ -25,8 +29,8 @@ var textures = function(textureChoice,x,y){
         rect(x-7.5,y-3,15.5,10);
         stroke(0, 0, 0);
         strokeWeight(1.25);
-        arc(x-3,y-3,7.5,7.5,180,360);
-        arc(x+5,y-3,7.5,7.5,180,360);
+        arc(x-3,y-3,7.5,7.5,PI,2*PI);
+        arc(x+5,y-3,7.5,7.5,PI,2*PI);
     }
     else if(textureChoice === "WholeWheatSlice"){
         fill(133, 97, 5);
@@ -34,8 +38,8 @@ var textures = function(textureChoice,x,y){
         rect(x-7.5,y-3,15.5,10);
         strokeWeight(1.25);
         stroke(0, 0, 0);
-        arc(x-3,y-3,7.5,7.5,180,360);
-        arc(x+5,y-3,7.5,7.5,180,360);
+        arc(x-3,y-3,7.5,7.5,PI,2*PI);
+        arc(x+5,y-3,7.5,7.5,PI,2*PI);
     }
     else if(textureChoice === "Pecker"){
         fill(255,255,255);
@@ -139,14 +143,17 @@ for(var i = 0; i < levels[level-1].length; i++){
 }
 //}
 draw = function() {
+  frameRate(50);
    background(0,255,0);
    textSize(50);
    fill(0);
-   text("Working Title",75,100);
+   text("Working Title\n",75,100);
+     textSize(45);
+
+   text("Play",155,340);
    noFill();
    rect(150,300,100,50);
-   textSize(45);
-   text("Play",155,340);
+
    if(mouseIsPressed&&mouseX>150&&mouseX<250&&mouseY>300&&mouseY<350){
         startGame = true;    
    }
